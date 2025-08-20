@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://jcevrw2oe2re"]
+
+[ext_resource type="Script" uid="uid://bbs5h00lwgh1q" path="res://DataFragment.gd" id="1_awii0"]
+[ext_resource type="Texture2D" uid="uid://uledtdccpjg3" path="res://Assets/Enviromental/S001_nyknck/S001_nyknck.png" id="2_nhxv4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jasq"]
+atlas = ExtResource("2_nhxv4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hl50i"]
+atlas = ExtResource("2_nhxv4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fy6kp"]
+atlas = ExtResource("2_nhxv4")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pm70g"]
+atlas = ExtResource("2_nhxv4")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cy1kj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jasq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hl50i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy6kp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pm70g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tdjev"]
+
+[node name="DataFragment" type="Area2D"]
+script = ExtResource("1_awii0")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cy1kj")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tdjev")
